@@ -34,14 +34,12 @@ function Login() {
 
     const response = await axios({
       method: "POST",
-      url: "http://localhost:3000/token",
+      url: `${import.meta.env.VITE_APP_BACK}/token`,
       data: {
         identifier: identifier,
         password: passwordValue,
       },
     });
-
- 
 
     const token = response.data.token;
     if (token) {
@@ -66,7 +64,7 @@ function Login() {
 
     const response = await axios({
       method: "POST",
-      url: "http://localhost:3000/users",
+      url: `${import.meta.env.VITE_APP_BACK}/users`,
       data: userData,
       headers: {
         "Content-Type": "multipart/form-data",

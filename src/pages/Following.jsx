@@ -29,7 +29,7 @@ function Following() {
     async function getUserInfo() {
       const response = await axios({
         method: "GET",
-        url: `http://localhost:3000/following/${username}`,
+        url: `${import.meta.env.VITE_APP_BACK}/following/${username}`,
         headers: {
           Authorization: `Bearer ${token}`,
         },
